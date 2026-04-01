@@ -131,6 +131,9 @@ footer{
 
 @media(max-width:1000px){
     .head{
+         width: 100%;
+        margin: 0px;
+        padding: 10px;
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
