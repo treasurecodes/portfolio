@@ -1,0 +1,187 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+nav{
+   padding-bottom: 50px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+ margin-right: 20px;
+    float: right;
+    gap: 20px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+.head{
+    margin: 10px 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.head h1{
+    font-size: 35px;
+    line-height: 50px;
+}
+
+.head p{
+    margin: 20px 0px;
+    line-height: 30px;
+}
+
+.head .left{
+    float: left;
+    flex: 3;
+    padding-right: 100px;
+}
+
+.head .right{
+    float: right;
+    flex: 1;
+    padding-right: 90px;
+}
+
+.developer{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+.resume{
+    margin: 20px 0px;
+    padding: 10px 20px;
+    background-color: #FF6464;
+    color:white;
+    border: none;
+}
+
+.dev{
+    height: 180px;
+    width: 250px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.card{
+    display: flex;
+    align-items:flex-start;
+    gap: 15px;
+    margin: 0px 0px;
+    padding: 30px 0px;
+
+}
+.works{
+    margin: 40px 90px;
+    justify-content: center;
+    width: auto;
+}
+
+.works .left{
+     flex: 1;
+    padding: 0;
+    margin: 0;
+
+}
+.works .right{
+     flex: 3;
+      padding: 0;
+    margin: 0;
+}
+.works h2{
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+.inline{
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.works .right h3{
+    margin-top: 0;
+    margin-bottom: 4px;
+}
+
+.works .right p {
+    margin: 0;
+    line-height: 28px;
+}
+
+.inline p {
+    padding: 12px 0px;
+}
+
+footer{
+    position: relative;
+    clear: both;
+    text-align: center;
+}
+
+@media(max-width:1000px){
+    .head{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+        padding: 10px 0px;
+        margin: 0px;
+    }
+    .head h1{
+        font-size: 30px;
+        line-height: 50px;
+    }
+
+
+     .head .left,
+    .head .right{
+        width: 100%;
+        padding-right: 0;
+        text-align: center;
+        float: none;
+    }
+
+     .head .right{
+        display: flex;
+        justify-content: center;
+    }
+
+    .developer{
+        display: block;
+        margin: 0 auto 20px auto;
+    }
+
+    .card{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+     .works{
+        margin: 40px 20px;
+    }
+
+      .works h2{
+        text-align: left;
+    }
+
+    .works .left,
+    .works .right{
+        width: 100%;
+        text-align: center;
+    }
+
+    .inline{
+        justify-content: center;
+    }
+
+}
