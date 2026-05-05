@@ -54,6 +54,7 @@ nav ul li a{
     text-decoration: none;
     color: black;
 }
+
 .developer{
     width: 300px;
     height: 300px;
@@ -72,7 +73,7 @@ nav ul li a{
 
 .dev{
     height: 180px;
-    width: 250px;
+    width: 300px;
     border-radius: 10px;
     object-fit: cover;
 }
@@ -135,22 +136,24 @@ footer{
 
 @media(max-width:1000px){
     .head{
-         width: 100%;
+        width: 100%;
         margin: 0px;
         padding: 10px;
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
         justify-content: center;
-        text-align: center;
+        text-align: left;
     }
 
-    .head .left,
-    .head .right{
+
+
+    .head .left{
         width: 100%;
+        max-width: 700px;
         padding: 0;
         margin: 0;
-        text-align: center;
+        text-align: left;
     }
 
     .head .right{
@@ -168,13 +171,13 @@ footer{
     }
 
     .head h1{
-        font-size: 23px;
+        font-size: 28px;
         line-height: 1.4;
         margin: 0 0 20px 0;
     }
 
     .head p{
-        text-align: center;
+        width: 100%;
         margin: 0 10px 25px auto;
         line-height: 1.8;
     }
@@ -197,15 +200,23 @@ footer{
     .works .left,
     .works .right{
         width: 100%;
+        max-width: 100%;
         text-align: center;
     }
 
     .dev{
         width: 100%;
-        max-width: 250px;
-        height: 180px;
+        max-width: 600px;
+        height: auto;
         display: block;
         margin: 0 auto;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .works .right p{
+        text-align: justify;
+        line-height: 28px;
     }
 
     .inline{
