@@ -284,7 +284,8 @@ footer{
         justify-self: center;
         max-width: 100%;
         display: block;
-        margin: 0 50%;
+        padding-left: 50px;
+        margin: 0 auto;
     }
 
     .head h1{
