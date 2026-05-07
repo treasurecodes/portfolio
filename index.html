@@ -25,7 +25,7 @@
         </div>
 
           <div class="right">
-            <img src="./o.jpeg" alt="Odafe the developer" class="developer">
+            <img src="./odafe.jpeg" alt="Odafe the developer" class="developer popup-img">
         </div>
 
       </div>
@@ -33,12 +33,33 @@
 
     <div class="works" id = "works">
         <h2>Featured Works</h2>
+
+            <div class="card">
+  <div class="left">
+    <div class="slideshow">
+        <img src="./ml.jpeg" class="dev slide active popup-img" alt="Machine Learning Certificate">
+        <img src="./sml.png" class="dev slide popup-img" alt="Supervised Machine Learning Certificate">
+
+        <button class="slide-btn prev" type="button">&#10094;</button>
+        <button class="slide-btn next" type="button">&#10095;</button>
+    </div>
+</div>
+        <div class="right">
+            <h3>Machine Learning Projects</h3>
+            <div class="inline">
+              <p class="year" > 2026</p>
+              <p>Machine Learning</p>
+            </div>
+            <p> I have multiple ceritfications on machine learning from coursera and i'm currently working on projects </p>
+        </div>
+       </div>
+
       <div class="card">
         <div class="left">
-            <a href="https://www.divinemobilecommunications.com.ng/"><img src="./divine-mobile.png" class="dev"> </a>
+           <img src="./divine-mobile.png" class="dev popup-img"> </a>
         </div>
         <div class="right">
-            <h3>Divine Mobile Communication</h3>
+            <a href="https://www.divinemobilecommunications.com.ng/"><h3>Divine Mobile Communication</h3></a>
             <div class="inline">
               <p class="year" > 2025</p>
               <p>Website</p>
@@ -51,10 +72,10 @@
 
        <div class="card">
         <div class="left">
-           <a href="https://www.homesalonapp.com/"> <img src="./hs.png" class="dev"> </a>
+           <img src="./homesalon.png" class="dev popup-img"> 
         </div>
         <div class="right">
-            <h3>Homesalon </h3>
+           <a href="https://www.homesalonapp.com/">  <h3>Homesalon </h3></a>
             <div class="inline">
               <p class="year" > 2026</p>
               <p>Website</p>
@@ -67,7 +88,7 @@
 
        <div class="card">
         <div class="left">
-            <img src="./happ.png" class="dev"> 
+            <img src="./happ.png" class="dev popup-img"> 
         </div>
         <div class="right">
             <h3>Homesalon App</h3>
@@ -80,19 +101,7 @@
        </div>
 
 
-       <div class="card">
-        <div class="left">
-            <img src="./ml.jpeg" class="dev"> 
-        </div>
-        <div class="right">
-            <h3>Machine Learning Projects</h3>
-            <div class="inline">
-              <p class="year" > 2026</p>
-              <p>Machine Learning</p>
-            </div>
-            <p> I have multiple ceritfications on machine learning from coursera and i'm currently working on projects </p>
-        </div>
-       </div>
+   
 
 
       </div>
@@ -100,9 +109,90 @@
     </main>
 
     <footer id="contact">
-       <a href="https://wa.me/2349055094471"  target="_blank"> <img src="./assets/whatsapp.jpg" style="width: 40px;height: 40px;cursor: pointer;" alt="whatsapp"></a>
-       <p>Copyright © 2026 Odafe Portfolio. All rights reserved.</p>
+       <a href="https://wa.me/2349055094471"  target="_blank"> <img src="./whatsapp.jpg" style="width: 40px;height: 40px;cursor: pointer;" alt="whatsapp"></a>
+       <p>Copyrighassets/ml.jpegt © 2026 Odafe Portfolio. All rights reserved.</p>
     </footer>
     
+    <div id="imageModal" class="image-modal">
+    <span class="close-modal">&times;</span>
+    <img id="modalImage" class="modal-image" alt="Full image preview">
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const slides = document.querySelectorAll(".slideshow .slide");
+        const nextBtn = document.querySelector(".next");
+        const prevBtn = document.querySelector(".prev");
+
+        let currentSlide = 0;
+        let autoSlide;
+
+        if (slides.length === 0) return;
+
+        function showSlide(index) {
+            slides[currentSlide].classList.remove("active");
+
+            currentSlide = (index + slides.length) % slides.length;
+
+            slides[currentSlide].classList.add("active");
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        function startAutoSlide() {
+            clearInterval(autoSlide);
+            autoSlide = setInterval(nextSlide, 10000);
+        }
+
+        nextBtn.addEventListener("click", function () {
+            nextSlide();
+            startAutoSlide();
+        });
+
+        prevBtn.addEventListener("click", function () {
+            prevSlide();
+            startAutoSlide();
+        });
+
+        startAutoSlide();
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const popupImages = document.querySelectorAll(".popup-img");
+        const modal = document.getElementById("imageModal");
+        const modalImage = document.getElementById("modalImage");
+        const closeModal = document.querySelector(".close-modal");
+
+        popupImages.forEach(function (img) {
+            img.addEventListener("click", function () {
+                modal.classList.add("show");
+                modalImage.src = img.src;
+                modalImage.alt = img.alt;
+            });
+        });
+
+        closeModal.addEventListener("click", function () {
+            modal.classList.remove("show");
+        });
+
+        modal.addEventListener("click", function (event) {
+            if (event.target === modal) {
+                modal.classList.remove("show");
+            }
+        });
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                modal.classList.remove("show");
+            }
+        });
+    });
+</script>
 </body>
 </html>
