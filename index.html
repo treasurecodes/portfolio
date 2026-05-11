@@ -1,198 +1,558 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Odafe Portfolio</title>
-    <link rel="stylesheet" href="./styles.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#works">Works</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>    
-    </header>
+:root {
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --surface-soft: #eef2ff;
+  --text: #111827;
+  --muted: #6b7280;
+  --primary: #ff6464;
+  --primary-dark: #e94f4f;
+  --border: #e5e7eb;
+  --shadow: 0 18px 45px rgba(17, 24, 39, 0.08);
+  --radius: 24px;
+}
 
-    <main >
-     <div class="head">
-      
-        <div class="left">
-            <h1>Hi, I am Ughakpoteni Odafe,<br> A Software Developer, Machine Learning Engineer and Web Developer</h1>
-            <p>Hi, I'm Ughakpoteni Odafe, a web developer, Flutter app developer, and machine learning engineer. I enjoy building websites, mobile apps, and smart digital solutions that are clean, user-friendly, and designed to solve real problems.</p>
-            <button class="resume"><a href="./odafe_cv_updated.pdf" download>Download Cv</a></button>
-        </div>
+* {
+  box-sizing: border-box;
+}
 
-          <div class="right">
-            <img src="./odafe.jpeg" alt="Odafe the developer" class="developer popup-img">
-        </div>
+html {
+  scroll-behavior: smooth;
+}
 
-      </div>
-      
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: "Inter", Arial, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(255, 100, 100, 0.14), transparent 30%),
+    linear-gradient(180deg, #ffffff 0%, var(--bg) 45%, #ffffff 100%);
+}
 
-    <div class="works" id = "works">
-        <h2>Featured Works</h2>
+img {
+  max-width: 100%;
+}
 
-            <div class="card">
-  <div class="left">
-    <div class="slideshow">
-        <img src="./ml.jpeg" class="dev slide active popup-img" alt="Machine Learning Certificate">
-        <img src="./sml.png" class="dev slide popup-img" alt="Supervised Machine Learning Certificate">
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-        <button class="slide-btn prev" type="button">&#10094;</button>
-        <button class="slide-btn next" type="button">&#10095;</button>
-    </div>
-</div>
-        <div class="right">
-            <h3>Machine Learning Projects</h3>
-            <div class="inline">
-              <p class="year" > 2026</p>
-              <p>Machine Learning</p>
-            </div>
-            <p> I have multiple ceritfications on machine learning from coursera and i'm currently working on projects </p>
-        </div>
-       </div>
+a:hover {
+  color: var(--primary);
+}
 
-      <div class="card">
-        <div class="left">
-           <img src="./divine-mobile.png" class="dev popup-img"> </a>
-        </div>
-        <div class="right">
-            <a href="https://www.divinemobilecommunications.com.ng/"><h3>Divine Mobile Communication</h3></a>
-            <div class="inline">
-              <p class="year" > 2025</p>
-              <p>Website</p>
-            </div>
-            <p> I created a fully functional e-commerce website that allows users to order phones and accessories with location-sensitive delivery charges, integrated payment processing, and a user-friendly dashboard for managing operations. </p>
-        </div>
-        </div>
+.container {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+}
 
-        <!-- <hr> -->
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.84);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(229, 231, 235, 0.75);
+}
 
-       <div class="card">
-        <div class="left">
-           <img src="./hs.png" class="dev popup-img"> 
-        </div>
-        <div class="right">
-           <a href="https://www.homesalonapp.com/">  <h3>Homesalon </h3></a>
-            <div class="inline">
-              <p class="year" > 2026</p>
-              <p>Website</p>
-            </div>
-            <p>I designed and developed an informational website that effectively communicates the app’s purpose and features, while serving as a gateway to its Google Play Store download page. The app enables customers to easily book barbers and makeup artists on demand. </p>
-        </div>
-       </div>
+.nav {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-       <!-- <hr> -->
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
 
-       <div class="card">
-        <div class="left">
-            <img src="./happ.png" class="dev popup-img"> 
-        </div>
-        <div class="right">
-            <h3>Homesalon App</h3>
-            <div class="inline">
-              <p class="year" > 2026</p>
-              <p>Mobile App</p>
-            </div>
-            <p> An innovative app set to launch soon, created to make booking barbers and makeup artists simple and convenient, with Google Maps functionality that helps users discover nearby professionals effortlessly.</p>
-        </div>
-       </div>
+.logo span {
+  color: var(--primary);
+}
 
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
 
-   
+.nav-links a {
+  display: inline-flex;
+  padding: 10px 16px;
+  color: var(--muted);
+  font-weight: 600;
+  border-radius: 999px;
+  transition: 0.25s ease;
+}
 
+.nav-links a:hover {
+  color: var(--text);
+  background: var(--surface-soft);
+}
 
-      </div>
-      
-    </main>
+.hero {
+  min-height: calc(100vh - 76px);
+  display: grid;
+  grid-template-columns: 1.35fr 0.85fr;
+  gap: 56px;
+  align-items: center;
+  padding: 80px 0;
+}
 
-    <footer id="contact">
-       <a href="https://wa.me/2349055094471"  target="_blank"> <img src="./whatsapp.jpg" style="width: 40px;height: 40px;cursor: pointer;" alt="whatsapp"></a>
-       <p>Copyright © 2026 Odafe Portfolio. All rights reserved.</p>
-    </footer>
-    
-    <div id="imageModal" class="image-modal">
-    <span class="close-modal">&times;</span>
-    <img id="modalImage" class="modal-image" alt="Full image preview">
-</div>
+.eyebrow {
+  margin: 0 0 14px;
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const slides = document.querySelectorAll(".slideshow .slide");
-        const nextBtn = document.querySelector(".next");
-        const prevBtn = document.querySelector(".prev");
+.hero h1 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(42px, 6vw, 72px);
+  line-height: 0.98;
+  letter-spacing: -0.07em;
+}
 
-        let currentSlide = 0;
-        let autoSlide;
+.hero-text {
+  max-width: 640px;
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.8;
+}
 
-        if (slides.length === 0) return;
+.hero-actions,
+.footer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
 
-        function showSlide(index) {
-            slides[currentSlide].classList.remove("active");
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: 999px;
+  font-weight: 800;
+  transition: 0.25s ease;
+}
 
-            currentSlide = (index + slides.length) % slides.length;
+.primary-btn {
+  color: #ffffff;
+  background: var(--primary);
+  box-shadow: 0 14px 28px rgba(255, 100, 100, 0.3);
+}
 
-            slides[currentSlide].classList.add("active");
-        }
+.primary-btn:hover {
+  color: #ffffff;
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
 
-        function nextSlide() {
-            showSlide(currentSlide + 1);
-        }
+.secondary-btn {
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
 
-        function prevSlide() {
-            showSlide(currentSlide - 1);
-        }
+.secondary-btn:hover {
+  color: var(--text);
+  background: var(--surface-soft);
+  transform: translateY(-2px);
+}
 
-        function startAutoSlide() {
-            clearInterval(autoSlide);
-            autoSlide = setInterval(nextSlide, 10000);
-        }
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
 
-        nextBtn.addEventListener("click", function () {
-            nextSlide();
-            startAutoSlide();
-        });
+.skills span,
+.project-meta span {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 8px 13px;
+  border-radius: 999px;
+  color: #374151;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid var(--border);
+  font-size: 14px;
+  font-weight: 700;
+}
 
-        prevBtn.addEventListener("click", function () {
-            prevSlide();
-            startAutoSlide();
-        });
+.hero-image-wrap {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
 
-        startAutoSlide();
-    });
+.image-glow {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255, 100, 100, 0.32), rgba(99, 102, 241, 0.24));
+  filter: blur(4px);
+}
 
-    document.addEventListener("DOMContentLoaded", function () {
-        const popupImages = document.querySelectorAll(".popup-img");
-        const modal = document.getElementById("imageModal");
-        const modalImage = document.getElementById("modalImage");
-        const closeModal = document.querySelector(".close-modal");
+.developer {
+  position: relative;
+  width: min(360px, 78vw);
+  height: min(360px, 78vw);
+  border-radius: 50%;
+  object-fit: cover;
+  border: 10px solid #ffffff;
+  box-shadow: var(--shadow);
+}
 
-        popupImages.forEach(function (img) {
-            img.addEventListener("click", function () {
-                modal.classList.add("show");
-                modalImage.src = img.src;
-                modalImage.alt = img.alt;
-            });
-        });
+.works {
+  padding: 64px 0 96px;
+}
 
-        closeModal.addEventListener("click", function () {
-            modal.classList.remove("show");
-        });
+.section-heading {
+  max-width: 720px;
+  margin-bottom: 32px;
+}
 
-        modal.addEventListener("click", function (event) {
-            if (event.target === modal) {
-                modal.classList.remove("show");
-            }
-        });
+.section-heading h2 {
+  margin: 0;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+}
 
-        document.addEventListener("keydown", function (event) {
-            if (event.key === "Escape") {
-                modal.classList.remove("show");
-            }
-        });
-    });
-</script>
-</body>
-</html>
+.section-heading p:last-child {
+  margin: 16px 0 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.project-card {
+  display: grid;
+  grid-template-columns: 330px 1fr;
+  gap: 30px;
+  align-items: center;
+  padding: 24px;
+  margin-top: 22px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(229, 231, 235, 0.85);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 35px rgba(17, 24, 39, 0.05);
+  transition: 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.dev {
+  width: 100%;
+  height: 220px;
+  display: block;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 10px 25px rgba(17, 24, 39, 0.08);
+}
+
+.project-content h3 {
+  margin: 14px 0 10px;
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+}
+
+.project-content p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.project-meta .year {
+  color: #ffffff;
+  background: #111827;
+  border-color: #111827;
+}
+
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #111827;
+  box-shadow: 0 10px 25px rgba(17, 24, 39, 0.08);
+}
+
+.slideshow .slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.slideshow .slide.active {
+  opacity: 1;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(17, 24, 39, 0.72);
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 5;
+  transition: 0.25s ease;
+}
+
+.slide-btn:hover {
+  background: rgba(17, 24, 39, 0.95);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.prev {
+  left: 12px;
+}
+
+.next {
+  right: 12px;
+}
+
+.popup-img {
+  cursor: zoom-in;
+}
+
+.footer {
+  margin-top: 40px;
+  padding: 64px 0 26px;
+  background: #111827;
+  color: #ffffff;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer h2 {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 42px);
+  letter-spacing: -0.05em;
+}
+
+.footer p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.8;
+}
+
+.footer .secondary-btn {
+  color: #ffffff;
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.footer .secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.copyright {
+  width: min(1120px, calc(100% - 40px));
+  margin: 36px auto 0;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  text-align: center;
+  font-size: 14px;
+}
+
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.image-modal.show {
+  display: flex;
+}
+
+.modal-image {
+  max-width: 92vw;
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.close-modal {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 36px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.close-modal:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 900px) {
+  .container {
+    width: min(100% - 28px, 720px);
+  }
+
+  .nav {
+    min-height: 68px;
+  }
+
+  .hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 34px;
+    padding: 44px 0 60px;
+    text-align: center;
+  }
+
+  .hero-content {
+    order: 2;
+  }
+
+  .hero-image-wrap {
+    order: 1;
+  }
+
+  .hero h1,
+  .hero-text,
+  .section-heading {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero h1 {
+    font-size: clamp(36px, 12vw, 56px);
+  }
+
+  .hero-text {
+    font-size: 16px;
+  }
+
+  .hero-actions,
+  .skills,
+  .footer-actions,
+  .project-meta {
+    justify-content: center;
+  }
+
+  .developer {
+    width: 230px;
+    height: 230px;
+    border-width: 7px;
+  }
+
+  .image-glow {
+    width: 245px;
+    height: 245px;
+  }
+
+  .works {
+    padding: 36px 0 70px;
+  }
+
+  .section-heading {
+    text-align: center;
+  }
+
+  .project-card {
+    grid-template-columns: 1fr;
+    padding: 18px;
+    text-align: center;
+  }
+
+  .dev,
+  .slideshow {
+    height: 240px;
+  }
+
+  .project-content h3 {
+    font-size: 24px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 520px) {
+  .nav-links a {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .logo {
+    font-size: 21px;
+  }
+
+  .hero-actions,
+  .footer-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .dev,
+  .slideshow {
+    height: 200px;
+  }
+
+  .project-card {
+    border-radius: 20px;
+  }
+}
