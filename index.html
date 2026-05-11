@@ -1,558 +1,249 @@
-:root {
-  --bg: #f8fafc;
-  --surface: #ffffff;
-  --surface-soft: #eef2ff;
-  --text: #111827;
-  --muted: #6b7280;
-  --primary: #ff6464;
-  --primary-dark: #e94f4f;
-  --border: #e5e7eb;
-  --shadow: 0 18px 45px rgba(17, 24, 39, 0.08);
-  --radius: 24px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  overflow-x: hidden;
-  font-family: "Inter", Arial, sans-serif;
-  color: var(--text);
-  background:
-    radial-gradient(circle at top left, rgba(255, 100, 100, 0.14), transparent 30%),
-    linear-gradient(180deg, #ffffff 0%, var(--bg) 45%, #ffffff 100%);
-}
-
-img {
-  max-width: 100%;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--primary);
-}
-
-.container {
-  width: min(1120px, calc(100% - 40px));
-  margin: 0 auto;
-}
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(255, 255, 255, 0.84);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(229, 231, 235, 0.75);
-}
-
-.nav {
-  min-height: 76px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: 800;
-  letter-spacing: -0.04em;
-}
-
-.logo span {
-  color: var(--primary);
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.nav-links a {
-  display: inline-flex;
-  padding: 10px 16px;
-  color: var(--muted);
-  font-weight: 600;
-  border-radius: 999px;
-  transition: 0.25s ease;
-}
-
-.nav-links a:hover {
-  color: var(--text);
-  background: var(--surface-soft);
-}
-
-.hero {
-  min-height: calc(100vh - 76px);
-  display: grid;
-  grid-template-columns: 1.35fr 0.85fr;
-  gap: 56px;
-  align-items: center;
-  padding: 80px 0;
-}
-
-.eyebrow {
-  margin: 0 0 14px;
-  color: var(--primary);
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.hero h1 {
-  max-width: 760px;
-  margin: 0;
-  font-size: clamp(42px, 6vw, 72px);
-  line-height: 0.98;
-  letter-spacing: -0.07em;
-}
-
-.hero-text {
-  max-width: 640px;
-  margin: 24px 0 0;
-  color: var(--muted);
-  font-size: 18px;
-  line-height: 1.8;
-}
-
-.hero-actions,
-.footer-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 32px;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 48px;
-  padding: 0 22px;
-  border-radius: 999px;
-  font-weight: 800;
-  transition: 0.25s ease;
-}
-
-.primary-btn {
-  color: #ffffff;
-  background: var(--primary);
-  box-shadow: 0 14px 28px rgba(255, 100, 100, 0.3);
-}
-
-.primary-btn:hover {
-  color: #ffffff;
-  background: var(--primary-dark);
-  transform: translateY(-2px);
-}
-
-.secondary-btn {
-  color: var(--text);
-  background: var(--surface);
-  border: 1px solid var(--border);
-}
-
-.secondary-btn:hover {
-  color: var(--text);
-  background: var(--surface-soft);
-  transform: translateY(-2px);
-}
-
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 28px;
-}
-
-.skills span,
-.project-meta span {
-  display: inline-flex;
-  align-items: center;
-  width: fit-content;
-  padding: 8px 13px;
-  border-radius: 999px;
-  color: #374151;
-  background: rgba(255, 255, 255, 0.75);
-  border: 1px solid var(--border);
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.hero-image-wrap {
-  position: relative;
-  display: grid;
-  place-items: center;
-}
-
-.image-glow {
-  position: absolute;
-  width: 360px;
-  height: 360px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, rgba(255, 100, 100, 0.32), rgba(99, 102, 241, 0.24));
-  filter: blur(4px);
-}
-
-.developer {
-  position: relative;
-  width: min(360px, 78vw);
-  height: min(360px, 78vw);
-  border-radius: 50%;
-  object-fit: cover;
-  border: 10px solid #ffffff;
-  box-shadow: var(--shadow);
-}
-
-.works {
-  padding: 64px 0 96px;
-}
-
-.section-heading {
-  max-width: 720px;
-  margin-bottom: 32px;
-}
-
-.section-heading h2 {
-  margin: 0;
-  font-size: clamp(32px, 4vw, 48px);
-  line-height: 1.05;
-  letter-spacing: -0.05em;
-}
-
-.section-heading p:last-child {
-  margin: 16px 0 0;
-  color: var(--muted);
-  line-height: 1.8;
-}
-
-.project-card {
-  display: grid;
-  grid-template-columns: 330px 1fr;
-  gap: 30px;
-  align-items: center;
-  padding: 24px;
-  margin-top: 22px;
-  background: rgba(255, 255, 255, 0.82);
-  border: 1px solid rgba(229, 231, 235, 0.85);
-  border-radius: var(--radius);
-  box-shadow: 0 12px 35px rgba(17, 24, 39, 0.05);
-  transition: 0.25s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow);
-}
-
-.dev {
-  width: 100%;
-  height: 220px;
-  display: block;
-  border-radius: 18px;
-  object-fit: cover;
-  box-shadow: 0 10px 25px rgba(17, 24, 39, 0.08);
-}
-
-.project-content h3 {
-  margin: 14px 0 10px;
-  font-size: 28px;
-  line-height: 1.15;
-  letter-spacing: -0.04em;
-}
-
-.project-content p {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.8;
-}
-
-.project-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.project-meta .year {
-  color: #ffffff;
-  background: #111827;
-  border-color: #111827;
-}
-
-.slideshow {
-  position: relative;
-  width: 100%;
-  height: 220px;
-  overflow: hidden;
-  border-radius: 18px;
-  background: #111827;
-  box-shadow: 0 10px 25px rgba(17, 24, 39, 0.08);
-}
-
-.slideshow .slide {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.7s ease-in-out;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.slideshow .slide.active {
-  opacity: 1;
-  z-index: 2;
-  pointer-events: auto;
-}
-
-.slide-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  border: none;
-  border-radius: 50%;
-  background: rgba(17, 24, 39, 0.72);
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-  z-index: 5;
-  transition: 0.25s ease;
-}
-
-.slide-btn:hover {
-  background: rgba(17, 24, 39, 0.95);
-  transform: translateY(-50%) scale(1.05);
-}
-
-.prev {
-  left: 12px;
-}
-
-.next {
-  right: 12px;
-}
-
-.popup-img {
-  cursor: zoom-in;
-}
-
-.footer {
-  margin-top: 40px;
-  padding: 64px 0 26px;
-  background: #111827;
-  color: #ffffff;
-}
-
-.footer-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-}
-
-.footer h2 {
-  margin: 0;
-  font-size: clamp(28px, 4vw, 42px);
-  letter-spacing: -0.05em;
-}
-
-.footer p {
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.8;
-}
-
-.footer .secondary-btn {
-  color: #ffffff;
-  background: transparent;
-  border-color: rgba(255, 255, 255, 0.18);
-}
-
-.footer .secondary-btn:hover {
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.copyright {
-  width: min(1120px, calc(100% - 40px));
-  margin: 36px auto 0;
-  padding-top: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  text-align: center;
-  font-size: 14px;
-}
-
-.image-modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.9);
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.image-modal.show {
-  display: flex;
-}
-
-.modal-image {
-  max-width: 92vw;
-  max-height: 88vh;
-  object-fit: contain;
-  border-radius: 18px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
-}
-
-.close-modal {
-  position: absolute;
-  top: 24px;
-  right: 32px;
-  width: 48px;
-  height: 48px;
-  border: none;
-  border-radius: 50%;
-  color: white;
-  background: rgba(255, 255, 255, 0.12);
-  font-size: 36px;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.close-modal:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-@media (max-width: 900px) {
-  .container {
-    width: min(100% - 28px, 720px);
-  }
-
-  .nav {
-    min-height: 68px;
-  }
-
-  .hero {
-    min-height: auto;
-    grid-template-columns: 1fr;
-    gap: 34px;
-    padding: 44px 0 60px;
-    text-align: center;
-  }
-
-  .hero-content {
-    order: 2;
-  }
-
-  .hero-image-wrap {
-    order: 1;
-  }
-
-  .hero h1,
-  .hero-text,
-  .section-heading {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero h1 {
-    font-size: clamp(36px, 12vw, 56px);
-  }
-
-  .hero-text {
-    font-size: 16px;
-  }
-
-  .hero-actions,
-  .skills,
-  .footer-actions,
-  .project-meta {
-    justify-content: center;
-  }
-
-  .developer {
-    width: 230px;
-    height: 230px;
-    border-width: 7px;
-  }
-
-  .image-glow {
-    width: 245px;
-    height: 245px;
-  }
-
-  .works {
-    padding: 36px 0 70px;
-  }
-
-  .section-heading {
-    text-align: center;
-  }
-
-  .project-card {
-    grid-template-columns: 1fr;
-    padding: 18px;
-    text-align: center;
-  }
-
-  .dev,
-  .slideshow {
-    height: 240px;
-  }
-
-  .project-content h3 {
-    font-size: 24px;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-@media (max-width: 520px) {
-  .nav-links a {
-    padding: 8px 10px;
-    font-size: 14px;
-  }
-
-  .logo {
-    font-size: 21px;
-  }
-
-  .hero-actions,
-  .footer-actions {
-    flex-direction: column;
-  }
-
-  .btn {
-    width: 100%;
-  }
-
-  .dev,
-  .slideshow {
-    height: 200px;
-  }
-
-  .project-card {
-    border-radius: 20px;
-  }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Odafe Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./assets/styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="#top" class="logo">Odafe<span>.</span></a>
+
+      <ul class="nav-links">
+        <li><a href="#works">Works</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <div class="hero-content">
+        <p class="eyebrow">Software Developer • Flutter Developer • ML Engineer</p>
+
+        <h1>Hi, I’m Ughakpoteni Odafe. I build clean web, mobile, and AI-powered solutions.</h1>
+
+        <p class="hero-text">
+          I’m a web developer, Flutter app developer, and machine learning engineer focused on building digital products that are simple, useful, and designed to solve real problems.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary-btn" href="./assets/odafe_cv.pdf" download>Download CV</a>
+          <a class="btn secondary-btn" href="#works">View Projects</a>
+        </div>
+
+        <div class="skills">
+          <span>Flutter & Dart</span>
+          <span>Web Development</span>
+          <span>Machine Learning</span>
+        </div>
+      </div>
+
+      <div class="hero-image-wrap">
+        <div class="image-glow"></div>
+        <img src="./odafe.jpeg" alt="Ughakpoteni Odafe" class="developer popup-img" />
+      </div>
+    </section>
+
+    <section class="works container" id="works">
+      <div class="section-heading">
+        <p class="eyebrow">Portfolio</p>
+        <h2>Featured Works</h2>
+        <p>Selected projects and certifications showing my work across web development, mobile apps, and machine learning.</p>
+      </div>
+
+      <article class="project-card">
+        <div class="project-media">
+          <div class="slideshow">
+            <img src="./assets/ml.jpeg" class="dev slide active popup-img" alt="Machine Learning Certificate" />
+            <img src="./sml.png" class="dev slide popup-img" alt="Supervised Machine Learning Certificate" />
+
+            <button class="slide-btn prev" type="button">&#10094;</button>
+            <button class="slide-btn next" type="button">&#10095;</button>
+          </div>
+        </div>
+
+        <div class="project-content">
+          <div class="project-meta">
+            <span class="year">2026</span>
+            <span>Machine Learning</span>
+          </div>
+
+          <h3>Machine Learning Projects</h3>
+
+          <p>
+            I have multiple machine learning certifications from Coursera and I am currently building practical projects to strengthen my AI and data-driven development skills.
+          </p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-media">
+          <img src="./assets/divine-mobile.png" class="dev popup-img" alt="Divine Mobile Communication website preview" />
+        </div>
+
+        <div class="project-content">
+          <div class="project-meta">
+            <span class="year">2025</span>
+            <span>Website</span>
+          </div>
+
+          <h3>
+            <a href="https://www.divinemobilecommunications.com.ng/" target="_blank">
+              Divine Mobile Communication
+            </a>
+          </h3>
+
+          <p>
+            I created a functional e-commerce website that allows users to order phones and accessories with location-sensitive delivery charges, payment processing, and a user-friendly operations dashboard.
+          </p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-media">
+          <img src="./assets/homesalon.png" class="dev popup-img" alt="HomeSalon website preview" />
+        </div>
+
+        <div class="project-content">
+          <div class="project-meta">
+            <span class="year">2026</span>
+            <span>Website</span>
+          </div>
+
+          <h3>
+            <a href="https://www.homesalonapp.com/" target="_blank">
+              HomeSalon Website
+            </a>
+          </h3>
+
+          <p>
+            I designed and developed an informational website that communicates the app’s purpose and features while guiding users to download the app from the Google Play Store.
+          </p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-media">
+          <img src="./assets/happ.png" class="dev popup-img" alt="HomeSalon app preview" />
+        </div>
+
+        <div class="project-content">
+          <div class="project-meta">
+            <span class="year">2026</span>
+            <span>Mobile App</span>
+          </div>
+
+          <h3>HomeSalon App</h3>
+
+          <p>
+            An innovative mobile app created to make booking barbers and makeup artists simple and convenient, with Google Maps functionality that helps users discover nearby professionals.
+          </p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="container footer-inner">
+      <div>
+        <h2>Let’s build something useful.</h2>
+        <p>Available for software development, Flutter, web, and machine learning opportunities.</p>
+      </div>
+
+      <div class="footer-actions">
+        <a class="btn primary-btn" href="https://wa.me/2349055094471" target="_blank">Message on WhatsApp</a>
+        <a class="btn secondary-btn" href="mailto:animationfeoner@gmail.com">Send Email</a>
+      </div>
+    </div>
+
+    <p class="copyright">Copyright © 2026 Odafe Portfolio. All rights reserved.</p>
+  </footer>
+
+  <div id="imageModal" class="image-modal">
+    <button class="close-modal" type="button">&times;</button>
+    <img id="modalImage" class="modal-image" alt="Full image preview" />
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const slides = document.querySelectorAll(".slideshow .slide");
+      const nextBtn = document.querySelector(".next");
+      const prevBtn = document.querySelector(".prev");
+
+      let currentSlide = 0;
+      let autoSlide;
+
+      if (slides.length > 0 && nextBtn && prevBtn) {
+        function showSlide(index) {
+          slides[currentSlide].classList.remove("active");
+          currentSlide = (index + slides.length) % slides.length;
+          slides[currentSlide].classList.add("active");
+        }
+
+        function nextSlide() {
+          showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+          showSlide(currentSlide - 1);
+        }
+
+        function startAutoSlide() {
+          clearInterval(autoSlide);
+          autoSlide = setInterval(nextSlide, 10000);
+        }
+
+        nextBtn.addEventListener("click", function () {
+          nextSlide();
+          startAutoSlide();
+        });
+
+        prevBtn.addEventListener("click", function () {
+          prevSlide();
+          startAutoSlide();
+        });
+
+        startAutoSlide();
+      }
+
+      const popupImages = document.querySelectorAll(".popup-img");
+      const modal = document.getElementById("imageModal");
+      const modalImage = document.getElementById("modalImage");
+      const closeModal = document.querySelector(".close-modal");
+
+      popupImages.forEach(function (img) {
+        img.addEventListener("click", function () {
+          modal.classList.add("show");
+          modalImage.src = img.src;
+          modalImage.alt = img.alt;
+        });
+      });
+
+      closeModal.addEventListener("click", function () {
+        modal.classList.remove("show");
+      });
+
+      modal.addEventListener("click", function (event) {
+        if (event.target === modal) {
+          modal.classList.remove("show");
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          modal.classList.remove("show");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
